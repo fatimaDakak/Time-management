@@ -1,19 +1,20 @@
+ version: '3'
 services:
   webapp:
     build:
-      context: .  # Utilisez le répertoire actuel comme contexte de construction
-      dockerfile: Dockerfile  # Spécifiez le fichier Dockerfile à utiliser
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"  # Mappez le port 8025 de l'hôte sur le port 8080 du conteneur
+      - "8080:8080"
     depends_on:
       - mysql
     environment:
-      - MYSQL_HOST=mysql  # Utilisez le nom du service du conteneur MySQL
+      - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
       - MYSQL_DATABASE=employee_management
       - MYSQL_USER=root
       - MYSQL_PASSWORD=
-      
+
   mysql:
     image: mysql:5.7
     environment:
@@ -21,4 +22,4 @@ services:
       MYSQL_ROOT_PASSWORD: ""
       MYSQL_DATABASE: employee_management
     volumes:
-      - ./employee_management.sql:/docker-entrypoint-initdb.d/employee_management.sql
+      - ./employee_management.sql:/docker-entrypoint-initdb.d/employee_management.sql                  
