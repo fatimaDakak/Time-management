@@ -1,23 +1,26 @@
 version: '3'
+
 services:
-  time-management-webapp-1:
-    image: time-management-webapp
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    depends_on:
+      - mysql
     environment:
-      - MYSQL_HOST=time-management-mysql-1
+      - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
       - MYSQL_DATABASE=employee_management
       - MYSQL_USER=root
       - MYSQL_PASSWORD=
 
-  time-management-mysql-1:
+  mysql:
     image: mysql:5.7
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_ROOT_PASSWORD: ""
       MYSQL_DATABASE: employee_management
-    ports:
-      - "3306:3306"
     volumes:
       - ./employee_management.sql:/docker-entrypoint-initdb.d/employee_management.sql
