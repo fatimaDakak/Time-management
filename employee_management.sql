@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `humeur` (
   `id` int(60) NOT NULL,
-  `DATE` date NOT NULL DEFAULT current_timestamp(),
+  `DATE` TIMESTAMP NOT NULL DEFAULT current_timestamp(),
   `sentiment` varchar(60) NOT NULL,
   `token` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
