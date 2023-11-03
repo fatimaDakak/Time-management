@@ -22,4 +22,4 @@ services:
       MYSQL_ROOT_PASSWORD: ""
       MYSQL_DATABASE: employee_management
     volumes:
-      - employee_management.sql:/docker-entrypoint-initdb.d/employee_management.sql
+      - ./employee_management.sql:/docker-entrypoint-initdb.d/employee_management.sql
