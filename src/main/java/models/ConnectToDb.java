@@ -17,14 +17,11 @@ public class ConnectToDb {
     }
 
     public static Connection getConnection() {
-        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            System.out.println("Connection to the database successful.");
+            return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
         } catch (SQLException e) {
-            System.err.println("Failed to connect to the database.");
             e.printStackTrace();
+            throw new RuntimeException("Failed to connect to the database", e);
         }
-        return connection;
     }
 }
