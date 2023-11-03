@@ -1,0 +1,23 @@
+version: '3'
+services:
+  webapp:
+    build:
+      context: .  # Utilisez le répertoire actuel comme contexte de construction
+      dockerfile: Dockerfile  # Spécifiez le fichier Dockerfile à utiliser
+    ports:
+      - "8080:8080"  # Mappez le port 8025 de l'hôte sur le port 8080 du conteneur
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_HOST=mysql  # Utilisez le nom du service du conteneur MySQL
+      - MYSQL_PORT=3306
+      - MYSQL_DATABASE=
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_DATABASE:
