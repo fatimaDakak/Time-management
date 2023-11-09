@@ -21,20 +21,21 @@ To utilize this application, follow these steps:
 4. Configure the admin panel and employee access accounts.
 5. Access the system through the appropriate URLs and interfaces.
 
+## Running with Docker Compose:
+
+This application also supports Docker for deployment. To run using Docker Compose, follow these steps:
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+2. Navigate to the root directory of this repository in your terminal.
+3. Use the following command to build and run the application:
+   ```
+   docker-compose up
+   ```
+4. Access the system through the defined ports and interfaces according to your Docker setup.
+
 ## System Requirements:
 
 - Java Runtime Environment (JRE)
 - Web server capable of running Java web applications
 - Database system for storing employee information and work hour data
 
-## Contribution:
-
-We welcome contributions to enhance and improve this time management system. Feel free to fork this repository, make necessary changes, and submit a pull request.
-
-## License:
-
-This project is licensed under [License Name]. Please refer to the LICENSE file for more details.
-
-For additional information or support, please refer to the documentation included in this repository.
-
-**Note:** This README provides a basic overview of the Time Management System. Detailed instructions, installation guidelines, and other pertinent information can be found within the repository's documentation files.
