@@ -11,6 +11,12 @@ This repository contains a Java web application designed for tracking the work h
 - **Admin Dashboard:** Administrators have access to statistics and reports. They can view comprehensive data including:
     - Weekly reports for each employee showcasing their work hours, supplementary hours, and more.
     - Overall statistics to analyze and manage work hour trends, productivity, and employee engagement.
+ 
+## Collaborators:
+ -Fatima DAKAK
+ - Ayoub GUACHOUR.
+ - Ghada JAMAL.
+ - Taha ELHOR
 
 ## Usage:
 
@@ -32,6 +38,8 @@ This application also supports Docker for deployment. To run using Docker Compos
    docker-compose up
    ```
 4. Access the system through the defined ports and interfaces according to your Docker setup.
+
+   ## DEMO 
 
 ## System Requirements:
 
